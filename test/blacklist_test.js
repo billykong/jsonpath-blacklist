@@ -77,6 +77,13 @@ describe('#blacklist()', function() {
     beforeEach(function() {
       options = {};
     });
+    
+    it('should remove masked jsonpath key', function(done) {
+      var inputJSON = { a: 'keep', b: { c: 'remove'}};
+      assert(_.isEqual(blacklist(['b.c'], inputJSON, options), { a: 'keep', b: {}}));
+      done();
+    });
+
     it('should remove masked jsonpath object', function(done) {
       var inputJSON = { a: 'keep', b: { c: { remove: 'be removed'}}};
       assert(_.isEqual(blacklist(['b.c'], inputJSON, options), { a: 'keep', b: {}}));

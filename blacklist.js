@@ -1,23 +1,19 @@
-// allow options argument for removing keys entirely, or to provide a replacement key
-// allow options for changing the object in place or return a deep copied object, except for cyclic reference objects
 /**
   options = {
-    replacement: undefined, // or any string
+    replacement: undefined, // or any string, do not include this key if you want ot omit the masked entirely
     deepCopy: true
   };
 */
 function blacklist(jsonPaths, inputJSON, options) { 
+  options = options || {};
   if (options.deepCopy) {
-    inputJSON = JSON.parse(JSON.stringify(inputJSON));
+    inputJSON = JSON.parse(JSON.stringify(inputJSON)); // TODO: catch for cyclic reference
   }
 
   jsonPaths = jsonPaths.sort().reverse();
   if (jsonPaths) {
     outputJSON = jsonPaths.reduce((json, rule) => { // check if a while loop is easier to read
-      // console.log('json: ' + JSON.stringify(json))
-      // console.log('rule: ' + JSON.stringify(rule));
       rule.split(".").reduce((json, fragment, currentIndex, array) => { // handle jsonPath subpath by subpath
-        // console.log('array: ' + JSON.stringify(array))
         let isLastFragment = currentIndex == (array.length - 1); // variable name `fragment` is difficult to understand
         let arrayMatches = fragment.match(/^([^\[\]]+)\[(\d+)\]/);
         if (arrayMatches) {
@@ -42,7 +38,6 @@ function blacklist(jsonPaths, inputJSON, options) {
       return json;
     }, inputJSON)
   }
-  // console.log(outputJSON)
   return outputJSON;
 }
 
