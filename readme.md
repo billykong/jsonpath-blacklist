@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/billykong/jsonpath-blacklist.svg?branch=master)](https://travis-ci.org/billykong/jsonpath-blacklist)
 [![Coverage Status](https://coveralls.io/repos/github/billykong/jsonpath-blacklist/badge.svg?branch=master)](https://coveralls.io/github/billykong/jsonpath-blacklist?branch=master)
+[![npm version](https://img.shields.io/npm/v/jsonpath-blacklist)](https://img.shields.io/npm/v/jsonpath-blacklist)
 [![Run on Repl.it](https://repl.it/badge/github/billykong/jsonpath-blacklist)](https://repl.it/github/billykong/jsonpath-blacklist)
 
 
