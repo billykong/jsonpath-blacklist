@@ -1,6 +1,6 @@
 {
   "name": "jsonpath-blacklist",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple masking of JSON object with a list of JsonPath",
   "main": "blacklist.js",
   "scripts": {
