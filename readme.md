@@ -1,6 +1,13 @@
-### Simple function for masking JSON with a list of JsonPaths
+[![Build Status](https://travis-ci.org/billykong/jsonpath-blacklist.svg?branch=master)](https://travis-ci.org/billykong/jsonpath-blacklist)
+[![Coverage Status](https://coveralls.io/repos/github/billykong/jsonpath-blacklist/badge.svg?branch=master)](https://coveralls.io/github/billykong/jsonpath-blacklist?branch=master)
+[![Run on Repl.it](https://repl.it/badge/github/billykong/jsonpath-blacklist)](https://repl.it/github/billykong/jsonpath-blacklist)
 
-#### Usage
+
+# JsonPath Blacklist
+Simple function for masking JSON with a list of JsonPaths
+
+
+## Usage
 ```JavaScript
 var blacklist  = require('jsonpath-blacklist');
 
@@ -52,4 +59,3 @@ console.log(outputJSON);
 // { a: 'keep', b: { c: ['keep', '<_masked_>', '<_masked_>'] }}
 ```
 
-[![Run on Repl.it](https://repl.it/badge/github/billykong/jsonpath-blacklist)](https://repl.it/github/billykong/jsonpath-blacklist)
