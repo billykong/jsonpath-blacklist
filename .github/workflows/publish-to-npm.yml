@@ -9,6 +9,7 @@ jobs:
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
-  steps:
-    - name: Publish to npm
-      uses: pascalgn/npm-publish-action@1.2.0
+    steps:
+      - name: Publish to npm
+        uses: pascalgn/npm-publish-action@1.2.0
+  
