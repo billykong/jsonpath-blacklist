@@ -4,7 +4,8 @@
   "description": "Simple masking of JSON object with a list of JsonPath",
   "main": "blacklist.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/billykong/jsonpath-blacklist#readme",
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "lodash": "^4.17.15",
     "mocha": "^7.1.1"
   }
